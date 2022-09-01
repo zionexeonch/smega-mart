@@ -12,7 +12,7 @@
 </head>
 <body>
     <header class="bg-white">
-        {{-- @include('layouts.partials.header.header-top') --}}
+        @include('layouts.partials.header.header-top')
         @include('layouts.partials.header.header-mid')
         @include('layouts.partials.header.header-bottom')
         @include('layouts.partials.breadcrumb')
