@@ -12,15 +12,19 @@
         </div>
       </div>
       @endif
+      @csrf
       <div>
         <label for="email" class="block ml-2 mb-2 text-sm font-medium text-gray-900">Email</label>
-        <input type="email" name="email" id="email" class="block w-full p-2.5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500" placeholder="Email" required>
+        <input type="email" name="email" id="email" class="block w-full p-2.5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-slate-500 focus:border-slate-500" placeholder="Email" autofocus required>
+        @error('email')
+        <p class="mt-2 text-sm text-red-600"><span class="font-medium">{{ $message }}</span></p>
+        @enderror
       </div>
       <div>
         <label for="password" class="block ml-2 mb-2 text-sm font-medium text-gray-900">Password</label>
-        <input type="password" name="password" id="password" class="block w-full p-2.5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500" placeholder="Password" required>
+        <input type="password" name="password" id="password" class="block w-full p-2.5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-slate-500 focus:border-slate-500" placeholder="Password" required>
       </div>
-      <button type="submit" class="w-full text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center">Login</button>
+      <button type="submit" class="w-full text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Login</button>
     </form>
   </div>
 </div>

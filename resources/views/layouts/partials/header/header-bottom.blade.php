@@ -1,6 +1,6 @@
 <div class="bg-white  border-y border-gray-200">
   <div class="container">
-    <nav class="px-3 py-1.5">
+    <nav class="px-3">
       <div class="container flex flex-wrap justify-between items-center relative">
         <div class="flex">
           <button type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden"
@@ -37,10 +37,6 @@
         </div>
         <div class="flex items-center absolute right-0">
           <div class="relative">
-            {{-- <span class="fa-stack">
-              <i class="fa-regular fa-circle fa-stack-2x"></i>
-              <i class="fa-brands fa-instagram fa-stack-1x"></i>
-            </span> --}}
             <i class="fa-brands fa-instagram fa-xl"></i>
           </div>
         </div>
