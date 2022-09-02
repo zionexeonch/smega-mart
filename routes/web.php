@@ -16,11 +16,6 @@ Route::get('/products/detail', [HomeController::class, 'productDetail']);
 Route::get('/about', [HomeController::class, 'about']);
 Route::get('/contact', [HomeController::class, 'contact']);
 
-
-//Routing Admin
-Route::get('/admin-dashboard', [AdminController::class, 'index']);
-Route::resource('admin-product', AdminProductController::class);
-
 // Routing Admin
 // Route::get('/admin-dashboard', [ProductController::class, 'index']);
 // Route::resource('admin-product', AdminProductController::class);
