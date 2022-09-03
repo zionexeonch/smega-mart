@@ -27,9 +27,11 @@
     </div>
 
     {{-- partner --}}
-    <div class="bg-gray-300">
-        @include('pages.partner')
-    </div>
+    @if ($title == 'Beranda')
+        <div class="bg-gray-300">
+            @include('pages.partner')
+        </div>
+    @endif
 
     <footer class="bg-white">
         @include('layouts.partials.footer.footer-mid')
