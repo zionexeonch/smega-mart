@@ -6,12 +6,6 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function login()
-    {
-      return view('pages.login', [
-        "title" => "Login"
-      ]);
-    }
 
     public function index()
     {

@@ -1,6 +1,6 @@
 <div class="bg-white pt-2 lg:pt-0">
   <div class="container">
-    <nav class="px-3 py-2 lg:py-5">
+    <nav class="px-3 py-2 lg:py-3">
       <div class="container flex flex-wrap justify-between items-center relative mx-auto">
         <a href="/" class="px-2">
           <span class="self-center text-3xl font-oswald font-semibold whitespace-nowrap">SMEGA MART</span>

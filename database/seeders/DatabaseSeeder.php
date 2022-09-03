@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,11 +16,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         User::create([
-          "name",
-          "email",
-          "password",
-          "level",
-
+          "name" => "Admin",
+          "email" => "smegamart@smega.sch.id",
+          "password" => Hash::make("SMart@2022"),
+          "level" => 2,
         ]);
     }
 }
