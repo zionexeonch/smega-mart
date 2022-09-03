@@ -8,8 +8,6 @@
         </div>
     </div>
 
-    <h1 class="text-center m-5 mt-10 text-4xl text-[#bb1724]">Tentang Kami</h1>
-    <div class="mx-auto h-[2px] w-[100px] bg-black -mt-4"></div>
     <p class="text-center mx-3 mt-3">
         <i class="fa fa-quote-left"></i> <b><i>Smega Mart</i></b> adalah toko retail yang ada di SMK N 1 PURBALINGGA. Toko
         retail yang menyediakan berbagai layanan yang sangat lengkap seperti jual makanan ringan, sepatu ada juga pembayaran
