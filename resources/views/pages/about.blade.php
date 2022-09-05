@@ -25,45 +25,19 @@
         </article>
     </div>
 
-    <h1 class="text-center m-5 mt-10 text-4xl">Layanan Kami :</h1>
+    <h1 class="text-center m-5 mt-10 text-4xl text-[#bb1724]">Beberapa produk kami</h1>
     <div class="mx-auto h-[2px] w-[100px] bg-black -mt-4"></div>
     <div
-        class="mx-auto container w-full max-w-screen-xl grid gap-6 grid-cols-1 md:grid-cols-4 shadow-lg bg-white hover:border-r-8 hover:border-b-8 hover:border-[#bb1724] rounded-lg mt-5 items-center justify-center">
-        <div class="mx-2 md:mx-2">
-            1. Menjual berbagai makanan, minuman dan lainnya
-        </div>
-        <div class="mx-2 md:mx-2">
-            2. Melayani pembayaran token listrik
-        </div>
-        <div class="mx-2 md:mx-2">
-            3. Menjual token listrik prabayar
-        </div>
-        <div class="mx-2 md:mx-2">
-            4. Melayani pembayaran BPJS
-        </div>
-    </div>
-
-    <h1 class="text-center m-5 mt-10 text-4xl">Mitra Kami :</h1>
-    <div class="mx-auto h-[2px] w-[100px] bg-black -mt-4"></div>
-    <div
-        class="mx-auto container w-full max-w-screen-xl grid gap-6 grid-cols-3 md:grid-cols-5 rounded-lg mt-5 m-3 items-center">
-        <div class="m-3 bg-white shadow-lg w-ful h-auto md:w-40 items-center justify-center rounded-lg">
+        class="mx-auto container w-full max-w-screen-xl grid gap-6 grid-cols-1 md:grid-cols-3 rounded-lg mt-5 items-center">
+        <div class="mx-auto bg-white shadow-lg w-ful h-auto md:w-40 items-center justify-center rounded-lg">
             <img src="/assets/img/HELM-FULLFACE-KYT-RC-SEVEN-14-YELLOW-FLUO.jpeg" alt=""
                 class="rounded-lg border-4 border-[#bb1724] hover:border-gray-400 shadow-lg">
         </div>
-        <div class="m-3 bg-white shadow-lg w-ful h-auto md:w-40 items-center justify-center rounded-lg">
+        <div class="mx-auto bg-white shadow-lg w-ful h-auto md:w-40 items-center justify-center rounded-lg">
             <img src="/assets/img/HELM-FULLFACE-KYT-RC-SEVEN-14-YELLOW-FLUO.jpeg" alt=""
                 class="rounded-lg border-4 border-[#bb1724] hover:border-gray-400 shadow-lg">
         </div>
-        <div class="m-3 bg-white shadow-lg w-ful h-auto md:w-40 items-center justify-center rounded-lg">
-            <img src="/assets/img/HELM-FULLFACE-KYT-RC-SEVEN-14-YELLOW-FLUO.jpeg" alt=""
-                class="rounded-lg border-4 border-[#bb1724] hover:border-gray-400 shadow-lg">
-        </div>
-        <div class="m-3 bg-white shadow-lg w-ful h-auto md:w-40 items-center justify-center rounded-lg">
-            <img src="/assets/img/HELM-FULLFACE-KYT-RC-SEVEN-14-YELLOW-FLUO.jpeg" alt=""
-                class="rounded-lg border-4 border-[#bb1724] hover:border-gray-400 shadow-lg">
-        </div>
-        <div class="m-3 bg-white shadow-lg w-ful h-auto md:w-40 items-center justify-center rounded-lg">
+        <div class="mx-auto bg-white shadow-lg w-ful h-auto md:w-40 items-center justify-center rounded-lg">
             <img src="/assets/img/HELM-FULLFACE-KYT-RC-SEVEN-14-YELLOW-FLUO.jpeg" alt=""
                 class="rounded-lg border-4 border-[#bb1724] hover:border-gray-400 shadow-lg">
         </div>
