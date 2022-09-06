@@ -21,6 +21,7 @@
             <div
                 class="relative p-3 col-start-1 row-start-1 flex flex-col-reverse rounded-lg bg-gradient-to-t from-black/75 via-black/0 sm:bg-none sm:row-start-2 sm:p-0 lg:row-start-1">
                 <h1 class="mt-1 text-lg font-semibold text-white sm:text-slate-900 md:text-2xl dark:sm:text-white">Smega Mart
+                    <span class="md:hiddentext-black">- Belanja di toko</span>
                 </h1>
             </div>
             <div

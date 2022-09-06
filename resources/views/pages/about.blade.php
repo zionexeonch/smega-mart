@@ -16,11 +16,11 @@
                 Purbalingga. Smega Mart menyediakan
                 berbagai macam kebutuhan sehari-hari. Disini bukan hanya makanan saja yang diperjual belikan ada juga yang
                 lain
-                seperti sepatu dan pakaian. Smega Mart bekerja sama dengan Alfamart untuk membangun trafik ekonomi yang
-                menjanjikan. Memberi kemudahan bagi masyarakat terdekat dan juga siswa SMK N 1 Purbalingga. <i
+                seperti sepatu dan alat tulis ada juga layanan pembelian pulsa. Smega Mart bekerja sama dengan Alfamart
+                untuk membangun trafik ekonomi yang
+                menjanjikan. Memberi kemudahan bagi masyarakat terdekat dan juga siswa siswi SMK N 1 Purbalingga. <i
                     class="fa fa-quote-right"></i><br>
 
-                <b class="mt-3">- Ardianto [Alumni SMK N 1 PURBALINGGA] -</b>
             </div>
         </article>
     </div>

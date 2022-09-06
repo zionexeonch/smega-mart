@@ -64,20 +64,17 @@
                     <td class="py-2 px-6 text-center">
                         Minuman
                     </td>
-                    <td class="px-6">
+                    <td class="py-2 px-6 text-center">
                         <a href="#"
-                            class="inline-flex bg-white text-sm text-blue-500 hover:bg-blue-500 hover:text-white p-2 border-2 border-blue-500 rounded-lg w-auto"><i
-                                class="inline-flex fa fa-book"></i> Detail</a>
+                            class="bg-blue-700 text-white font-bold p-3 rounded-lg hover:bg-blue-800">Detail</a>
                     </td>
-                    <td>
-                        <a href="#"
-                            class="bg-white text-sm text-yellow-400 hover:bg-yellow-400 hover:text-white p-2 border-2 border-yellow-400 rounded-lg"><i
-                                class="fa fa-edit"></i> Edit</a>
+                    <td class="py-2 px-6 text-center">
+                        <a href="dashboard/products/{1}/edit"
+                            class="bg-yellow-300 text-black font-bold hover:bg-yellow-400 p-3 rounded-lg">Edit</a>
                     </td>
-                    <td>
+                    <td class="py-2 px-6 text-center">
                         <a href="#" onclick="return confirm('Yakin dihapus?')"
-                            class="bg-white text-sm text-red-600 hover:bg-red-600 hover:text-white p-2 border-2 border-red-600 rounded-lg"><i
-                                class="fa fa-trash"></i> Hapus</a>
+                            class="bg-red-600 text-white hover:bg-red-700 p-3 rounded-lg">Hapus</a>
                     </td>
                 </tr>
             </tbody>

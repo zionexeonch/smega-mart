@@ -49,12 +49,12 @@
                     class="flex flex-col p-4 mt-4 bg-[#bb1724] rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-[#bb1724] dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                     <li>
                         <a href="/dashboard"
-                            class="block py-2 pr-4 pl-3 text-white rounded hover:text-white md:hover:bg-transparent md:hover:text-white md:hover:bg-blue-800 md:p-2 {{ request()->is('admin-dashboard') ? 'text-black bg-white md:bg-white md:text-black p-3' : 'md:text-white' }}"
+                            class="block py-2 pr-4 pl-3 text-white rounded hover:text-white md:hover:bg-transparent md:hover:text-white md:hover:bg-blue-800 md:p-2 {{ request()->is('/dashboard') ? 'text-black bg-white md:bg-white md:text-black p-3' : 'md:text-white' }}"
                             aria-current="page">Dashboard</a>
                     </li>
                     <li>
                         <a href="/dashboard/products"
-                            class="block py-2 pr-4 pl-3 text-white rounded hover:text-white md:hover:bg-transparent md:hover:text-white md:hover:bg-blue-800 md:p-2 {{ request()->is('admin-product') ? 'text-black bg-white md:bg-white md:text-black p-3' : 'md:text-white' }}"
+                            class="block py-2 pr-4 pl-3 text-white rounded hover:text-white md:hover:bg-transparent md:hover:text-white md:hover:bg-blue-800 md:p-2 {{ request()->is('/dashboard/products') ? 'text-black bg-white md:bg-white md:text-black p-3' : 'md:text-white' }}"
                             aria-current="page">Produk</a>
                     </li>
                     <li>
@@ -78,10 +78,27 @@
         </div>
     </div> --}}
     <header class="bg-white shadow mt-16 sm:mt-20">
-
-        <div class="container flex flex-wrap justify-between items-center max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-            <h1 class="flex text-3xl tracking-tight font-bold text-gray-900">{{ $title }}</h1>
-        </div>
+        @if ($title == 'Produk')
+            <div
+                class="container flex flex-wrap justify-between items-center max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <h1 class="flex text-3xl tracking-tight font-bold text-gray-900">{{ $title }}</h1>
+                <a href="/dashboard/products/create" class="bg-red-600 text-white hover:bg-red-700 p-3 rounded-lg"><i
+                        class="fa fa-plus"></i> Tambah
+                    Produk</a>
+            </div>
+        @elseif ($title == 'Tambah Produk')
+            <div
+                class="container flex flex-wrap justify-between items-center max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <h1 class="flex text-3xl tracking-tight font-bold text-gray-900">{{ $title }}</h1>
+                <a href="/dashboard/products" class="bg-gray-500 text-white hover:bg-gray-600 p-3 rounded-lg"><i
+                        class="fa fa-circle-left"></i> Batal</a>
+            </div>
+        @else
+            <div
+                class="container flex flex-wrap justify-between items-center max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <h1 class="flex text-3xl tracking-tight font-bold text-gray-900">{{ $title }}</h1>
+            </div>
+        @endif
     </header>
     <main>
         <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
@@ -95,15 +112,15 @@
         </div>
     </main>
 
-    <div class="bg-gray-200">
+    {{-- <div class="bg-gray-200">
         <div class="container">
-            <div class="py-6 px-3">
+            <div class="py-6 px-3" style="bottom: 0;">
                 <p class="text-sm text-center text-gray-500"><b>&copy 2022</b> Dibuat oleh <a
                         href="https://softdev.akriliklasercutting.com" target="_blank" class="font-bold">SOFTDEV
                         COMMUNITY</a> dengan sepenuh &#10084;&#65039;</p>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/flowbite.js') }}"></script>
