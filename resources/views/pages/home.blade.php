@@ -1,6 +1,6 @@
 @extends('layouts.layout-main')
 @section('content')
-    <div class="container">
+    {{-- <div class="container">
         <div
             class="w-full h-40 bg-[url('/assets/img/tampak-depan.jpg')] bg-cover bg-center bg-blend-multiply bg-black/[0.2]">
             <div class="flex items-start justify-center">
@@ -14,9 +14,126 @@
         secara online. Toko yang berdiri untuk memenuhi kebutuhan masyarakat
         disekitar dan juga memenuhi kebutuhan siswa dan siswi SMK N 1 PURBALINGGA. Bekerjasama dengan Alfamart dan SMK N 1
         Purbalingga untuk membuat trafik ekonomi yang memadai banyak kalangan. <i class="fa fa-quote-right"></i>
-    </p>
+    </p> --}}
 
-    <h1 class="text-center m-5 mt-10 text-4xl text-[#bb1724]">Layanan Kami</h1>
+    <main class="container">
+        <div class="max-w-full mx-auto grid grid-cols-1 lg:max-w-full lg:gap-x-6 lg:grid-cols-2">
+            <div
+                class="relative p-3 col-start-1 row-start-1 flex flex-col-reverse rounded-lg bg-gradient-to-t from-black/75 via-black/0 sm:bg-none sm:row-start-2 sm:p-0 lg:row-start-1">
+                <h1 class="mt-1 text-lg font-semibold text-white sm:text-slate-900 md:text-2xl dark:sm:text-white">Smega Mart
+                </h1>
+            </div>
+            <div
+                class="grid gap-4 col-start-1 col-end-3 row-start-1 sm:mb-6 sm:grid-cols-4 lg:gap-6 lg:col-start-2 lg:row-end-6 lg:row-span-6 lg:mb-0">
+                <img src="/assets/img/tampak-depan.jpg" alt=""
+                    class="w-full h-60 object-cover rounded-lg sm:h-52 sm:col-span-2 lg:col-span-full" loading="lazy">
+                <img src="/assets/img/tampak-depan-bak.jpg" alt=""
+                    class="hidden w-full h-52 object-cover rounded-lg sm:block sm:col-span-2 md:col-span-1 lg:row-start-2 lg:col-span-2 lg:h-32"
+                    loading="lazy">
+                <img src="/assets/img/tampak-depan.jpg" alt=""
+                    class="hidden w-full h-52 object-cover rounded-lg md:block lg:row-start-2 lg:col-span-2 lg:h-32"
+                    loading="lazy">
+            </div>
+            <dl
+                class="mt-4 text-xs font-medium flex items-center row-start-2 sm:mt-1 sm:row-start-3 md:mt-2.5 lg:row-start-2">
+                <dd class="flex items-center">
+                    <i class="fa fa-location-dot"></i>
+                    <p class="ml-3">Berada di sebelah SMK N 1 PURBALINGGA, Jl. Mayjend Sungkono
+                        34 Kec. Kalimanah, Kab. Purbalingga</p>
+                </dd>
+            </dl>
+            <p
+                class="mt-4 md:mt-2 text-sm leading-6 col-start-1 sm:col-span-2 md:row-start-4 md:col-span-1 dark:text-slate-400">
+                <i class="fa fa-quote-left"></i> <b><i>Smega Mart</i></b> adalah toko retail yang ada di SMK N 1
+                PURBALINGGA. Toko
+                retail yang menyediakan berbagai layanan yang sangat lengkap seperti jual makanan ringan, sepatu dan
+                lainnya. Toko yang berdiri untuk memenuhi kebutuhan masyarakat
+                disekitar dan juga memenuhi kebutuhan siswa dan siswi SMK N 1 PURBALINGGA. Bekerjasama dengan Alfamart dan
+                SMK N 1
+                Purbalingga untuk membuat trafik ekonomi yang memadai banyak untuk kalangan. <i
+                    class="fa fa-quote-right"></i>
+            </p>
+        </div>
+    </main>
+
+    <div class="bg-white  mt-4 md:mt-6">
+        <main class="container">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full h-auto items-center mx-auto">
+                <div>
+                    {{-- <img src="/assets/img/roma-wafello-chocoblast-depan.jpg" alt=""> --}}
+
+
+                    <div id="controls-carousel" class="relative" data-carousel="static">
+                        <!-- Carousel wrapper -->
+                        <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+                            <!-- Item 1 -->
+                            <div class="duration-100 ease-in-out absolute inset-0 transition-all transform -translate-x-full z-10"
+                                data-carousel-item="">
+                                <img src="/assets/img/roma-wafello-chocoblast-depan.jpg"
+                                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 h-auto"
+                                    alt="...">
+                            </div>
+                            <!-- Item 2 -->
+                            <div class="duration-100 ease-in-out absolute inset-0 transition-all transform translate-x-0 z-20"
+                                data-carousel-item="active">
+                                <img src="/assets/img/roma-wafello-chocoblast-belakang.jpg"
+                                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 h-auto"
+                                    alt="...">
+                            </div>
+                            <!-- Item 3 -->
+                            <div class="duration-100 ease-in-out absolute inset-0 transition-all transform translate-x-full z-10"
+                                data-carousel-item="">
+                                <img src="/assets/img/roma-wafello-chocoblast-depan.jpg"
+                                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 h-auto"
+                                    alt="...">
+                            </div>
+                        </div>
+                        <!-- Slider controls -->
+                        <button type="button"
+                            class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                            data-carousel-prev="">
+                            <span
+                                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                                <svg aria-hidden="true" class="w-6 h-6 text-white dark:text-gray-800" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 19l-7-7 7-7">
+                                    </path>
+                                </svg>
+                                <span class="sr-only">Previous</span>
+                            </span>
+                        </button>
+                        <button type="button"
+                            class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                            data-carousel-next="">
+                            <span
+                                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                                <svg aria-hidden="true" class="w-6 h-6 text-white dark:text-gray-800" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                                    </path>
+                                </svg>
+                                <span class="sr-only">Next</span>
+                            </span>
+                        </button>
+                    </div>
+
+                </div>
+                <div class="text-center">
+                    <i class="fa fa-quote-left"></i>
+                    Kami memiliki produk yang lengkap dan pasti berkualitas. Kami menjual berbagai produk dari makanan
+                    ringan /
+                    jajanan, alat tulis dan lainnya. Pengecekan dan pemilihan produk yang tepat untuk menjamin produk
+                    berkualitas dan aman tentunya. Bermacam produk ada untuk memenuhi kebutuhan masyarakat sektiar dengan
+                    harga
+                    yang pas dikantong. <i class="fa fa-quote-right"></i>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+    {{-- <h1 class="text-center m-5 mt-10 text-4xl text-[#bb1724]">Layanan Kami</h1>
     <p class="text-sm text-center -mt-3">Memiliki layanan yang sangat lengkap</p>
     <div class="mx-auto h-[2px] w-[100px] bg-black mt-1"></div>
 
@@ -150,14 +267,14 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
 
     <div
         class="mt-5 w-full h-40 md:w-full md:h-[500px] bg-[url('/assets/img/tampak-depan-bak.jpg')] bg-cover bg-bottom md:bg-bottom bg-blend-multiply">
         <div class="flex items-center mx-auto justify-center">
             <p
-                class="text-sm md:text-2xl md:text-white text-white bg-black/[0.2] md:bg-black mt-7 md:mt-[250px] text-center p-3 md:rounded-lg">
+                class="text-sm md:text-2xl md:text-white text-white bg-black/[0.2] md:bg-black/[0.5] mt-7 md:mt-[250px] text-center p-3 md:rounded-lg">
                 Belanja di
                 toko dengan
                 segala
@@ -166,7 +283,7 @@
         </div>
     </div>
 
-    <div class="bg-white text-black shadow-lg rounded-lg w-full">
+    {{-- <div class="bg-white text-black shadow-lg rounded-lg w-full">
         <h1 class="text-center m-5 mt-10 text-4xl text-[#bb1724]">Mengapa memilih kami?</h1>
         <p class="text-sm text-center -mt-3">Alasan memilih kami?</p>
         <div class="mx-auto h-[2px] w-[100px] bg-black mt-1"></div>
@@ -180,10 +297,10 @@
             <p>4. Memiliki banyak kelengkapan layanan yang tersedia ada pembayaran online, pembelian tiket pesawat dan
                 kereta dan lainnya.</p>
         </div>
-    </div>
+    </div> --}}
 
-    <div class="container">
-        <div class="bg-white flex flex-wrap">
+    <div class="container md:mt-6 mt-4">
+        <div class="bg-white flex-wrap grid-cols-1 md:grid-cols-2 grid">
             <div class="w-full px-4">
                 <div class="max-w-[570px] mb-12">
                     <div class="flex mt-8 max-w-[370px] w-full">
@@ -252,4 +369,9 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // starts or resumes the carousel cycling (automated sliding)
+        carousel.cycle(100)
+    </script>
 @endsection
