@@ -35,7 +35,7 @@
             </thead>
             <tbody>
                 <tr class="bg-white border-b hover:bg-gray-50 text-black">
-                    <th class="border m-auto text-center w-auto">
+                    <th class="py-2 px-6 text-center">
                         1
                     </th>
                     <td class="items-center py-3 px-6 dark:text-white">
@@ -62,23 +62,17 @@
                         20
                     </td>
                     <td class="py-2 px-6 text-center">
-                        Minuman
+                        Makanan
                     </td>
-                    <td class="py-2 px-1 items-center md:px-auto text-center">
-                        <a href="{{ route('products.show', [1]) }}"
-                            class="bg-blue-700 text-white font-bold p-2 rounded-lg hover:bg-blue-800 text-sm w-full"><i
-                                class="fa fa-book"></i> Detail</a>
+                    <td class="py-2 px-3 text-center">
+                        <a href="#" type="submit"
+                            class="p-3 bg-white text-blue-600 hover:bg-blue-600 border hover:text-white border-blue-600 text-sm rounded-lg"><i
+                                class="fa fa-plus"></i> Stok Gudang</a>
                     </td>
-                    <td class="py-2 px-1 items-center md:px-auto text-center">
-                        <a href="/dashboard/products/1/edit"
-                            class="bg-yellow-300 text-black font-bold hover:bg-yellow-400 p-2 rounded-lg text-sm w-full"><i
-                                class="fa fa-edit"></i> Edit</a>
-                    </td>
-                    <td class="py-2 px-1 items-center md:px-auto text-center">
-                        <a href="#" onclick="return confirm('Yakin dihapus?')"
-                            class="bg-red-600 text-white hover:bg-red-700 p-2 rounded-lg text-sm w-full"><i
-                                class="fa fa-trash"></i>
-                            Hapus</a>
+                    <td class="py-2 px-3 text-center">
+                        <a href="#" type="submit"
+                            class="p-3 bg-white text-blue-600 hover:bg-blue-600 border hover:text-white border-blue-600 text-sm rounded-lg"><i
+                                class="fa fa-plus"></i> Stok Toko</a>
                     </td>
                 </tr>
             </tbody>

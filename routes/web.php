@@ -4,6 +4,9 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\StorageController;
+use App\Http\Controllers\KasirController;
+use App\Http\Controllers\LaporanController;
 use Illuminate\Support\Facades\Route;
 
 // Routing
@@ -25,4 +28,9 @@ Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth');
 Route::middleware(['auth'])->group(function () {
   Route::get('/dashboard', [AdminController::class, 'index']);
   Route::resource('/dashboard/products', ProductController::class);
+  Route::resource('/storage', StorageController::class);
+
+  //Route kasir
+  Route::resource('/kasir', KasirController::class);
+  Route::resource('/laporan', LaporanController::class);
 });

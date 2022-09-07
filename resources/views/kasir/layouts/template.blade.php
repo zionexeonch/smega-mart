@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{ $title }} | Admin Smega Mart</title>
+    <title>{{ $title }} | Kasir Smega Mart</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -23,11 +23,11 @@
 
 
     <nav
-        class="bg-white sm:px-4 py-2.5 bg-[#bb1724] text-white fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
+        class="sm:px-4 py-2.5 bg-[#bb1724] text-white fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
         <div class="container flex flex-wrap justify-between items-center mx-auto">
             <a href="/admin-dashboard" class="flex items-center ml-3 sm:ml-0">
                 {{-- <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"> --}}
-                <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">ADMIN | Smega
+                <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"><b>KASIR</b> | Smega
                     Mart</span>
             </a>
             <div class="flex md:order-2">
@@ -49,19 +49,24 @@
                 <ul
                     class="flex flex-col p-4 mt-4 bg-white text-black rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-[#bb1724]">
                     <li>
-                        <a href="/dashboard"
+                        <a href="#"
                             class="block py-2 pr-4 pl-3 text-black rounded hover:text-black md:hover:bg-transparent md:hover:text-white md:hover:bg-blue-800 md:p-2 {{ request()->is('/dashboard') ? 'text-black bg-white md:bg-white md:text-black p-3' : 'md:text-white' }}"
+                            aria-current="page">Kasir</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 pr-4 pl-3 text-black rounded hover:text-black md:hover:bg-transparent md:hover:text-white md:hover:bg-blue-800 md:p-2 {{ request()->is('/dashboard/products') ? 'text-black bg-white md:bg-white md:text-black p-3' : 'md:text-white' }}"
                             aria-current="page">Dashboard</a>
                     </li>
                     <li>
-                        <a href="/dashboard/products"
-                            class="block py-2 pr-4 pl-3 text-black rounded hover:text-black md:hover:bg-transparent md:hover:text-white md:hover:bg-blue-800 md:p-2 {{ request()->is('/dashboard/products') ? 'text-black bg-white md:bg-white md:text-black p-3' : 'md:text-white' }}"
-                            aria-current="page">Produk</a>
+                        <a href="{{ route('laporan.index') }}"
+                            class="block py-2 pr-4 pl-3 text-black rounded hover:text-black md:hover:bg-transparent md:hover:text-white md:hover:bg-blue-800 md:p-2 {{ request()->is('admin-storage') ? 'text-black bg-white md:bg-white md:text-black p-3' : 'md:text-white' }}"
+                            aria-current="page">Laporan</a>
                     </li>
                     <li>
-                        <a href="{{ route('storage.index') }}"
+                        <a href="#"
                             class="block py-2 pr-4 pl-3 text-black rounded hover:text-black md:hover:bg-transparent md:hover:text-white md:hover:bg-blue-800 md:p-2 {{ request()->is('admin-storage') ? 'text-black bg-white md:bg-white md:text-black p-3' : 'md:text-white' }}"
-                            aria-current="page">Gudang</a>
+                            aria-current="page">Pesanan</a>
                     </li>
                 </ul>
             </div>
@@ -93,6 +98,21 @@
                 <h1 class="flex text-3xl tracking-tight font-bold text-gray-900">{{ $title }}</h1>
                 <a href="/dashboard/products" class="bg-gray-500 text-white hover:bg-gray-600 p-3 rounded-lg"><i
                         class="fa fa-circle-left"></i> Batal</a>
+            </div>
+        @elseif ($title == 'Laporan')
+            <div
+                class="container flex flex-wrap justify-between items-center max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <h1 class="flex text-3xl tracking-tight font-bold text-gray-900">{{ $title }}</h1>
+                <!-- drawer init and toggle -->
+                <div class="text-center">
+                    <button
+                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                        type="button" data-drawer-target="drawer-swipe" data-drawer-show="drawer-swipe"
+                        data-drawer-placement="bottom" data-drawer-edge="true" data-drawer-edge-offset="bottom-[60px]"
+                        aria-controls="drawer-swipe">
+                        Cek Laporan
+                    </button>
+                </div>
             </div>
         @else
             <div
