@@ -26,4 +26,3 @@ Route::middleware(['auth'])->group(function () {
   Route::get('/dashboard', [AdminController::class, 'index']);
   Route::resource('/dashboard/products', ProductController::class);
 });
-

@@ -65,11 +65,11 @@
                         Minuman
                     </td>
                     <td class="py-2 px-6 text-center">
-                        <a href="#"
+                        <a href="{{ route('products.show', [1]) }}"
                             class="bg-blue-700 text-white font-bold p-3 rounded-lg hover:bg-blue-800">Detail</a>
                     </td>
                     <td class="py-2 px-6 text-center">
-                        <a href="dashboard/products/{1}/edit"
+                        <a href="/dashboard/products/1/edit"
                             class="bg-yellow-300 text-black font-bold hover:bg-yellow-400 p-3 rounded-lg">Edit</a>
                     </td>
                     <td class="py-2 px-6 text-center">

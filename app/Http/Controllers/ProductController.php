@@ -51,7 +51,9 @@ class ProductController extends Controller
    */
   public function show(Product $product)
   {
-    //
+    return view('admin.pages.product.detail', [
+      'title' => 'Detail',
+    ]);
   }
 
   /**
@@ -60,7 +62,7 @@ class ProductController extends Controller
    * @param  \App\Models\Product  $product
    * @return \Illuminate\Http\Response
    */
-  public function edit(Product $product)
+  public function edit(Product $product, $id)
   {
     return view('admin.pages.product.edit', [
       'title' => 'Edit Produk',

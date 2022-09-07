@@ -27,7 +27,7 @@
                     placeholder="Harga Jual" required="" name="price">
             </div>
             <div>
-                <label for="stock_store" class="block mb-2 text-sm font-medium">Kategori</label>
+                <label for="stock_store" class="block mb-2 text-sm font-medium">Satuan</label>
                 <select name="" id=""
                     class="shadow-md border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     <option value="" class="hover:bg-blue-600 hover:text-white">Pilih Satuan</option>
@@ -55,24 +55,70 @@
                     placeholder="Stok Toko" required="" name="stock_store">
             </div>
             <div>
-                <label for="image_main" class="block mb-2 text-sm font-medium">Gambar utama</label>
-                <input type="file" id="image_main"
-                    class="shadow-md border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Image" required="" name="image_main">
+                <label for="stock_store" class="block mb-2 text-sm font-medium">Suplier</label>
+                <select name="" id=""
+                    class="shadow-md border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option value="">Pilih Suplier</option>
+                    <option value="">PT Mayora Indah TBK</option>
+                </select>
             </div>
             <div>
-                <label for="images" class="block mb-2 text-sm font-medium">Gambar lain</label>
-                <input type="file" id="images"
+                <label for="varian" class="block mb-2 text-sm font-medium">Varian</label>
+                <input type="text" id="varian"
                     class="shadow-md border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Images" required="" name="images[]">
+                    placeholder="Varian" required="" name="varian">
             </div>
+        </div>
 
+        <div>
+            <label for="image_main" class="block mb-2 text-sm font-medium">Deskripsi</label>
+            <textarea name="description" id=""
+                class="w-full h-28 shadow-md border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Deskripsi Produk"></textarea>
         </div>
-        <div class="mb-6">
-            <button type="submit"
-                class="mt-3 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Simpan</button>
-            <a href="/dashboard/products" type="button"
-                class="mt-3 text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">Batal</a>
-        </div>
+
+        <div class="grid gap-6 md:grid-cols-2 mt-2">
+            <div class="grid gap-6 md:grid-cols-2">
+                <div>
+                    <label for="weight" class="block mb-2 text-sm font-medium">Berat (gram)</label>
+                    <input type="number" id="weight"
+                        class="shadow-md border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="1 KG = 100 gram" required="" name="weight">
+                </div>
+                <div>
+                    <label for="image_main" class="block mb-3 text-sm font-medium">Gambar utama</label>
+                    <input type="file" id="image_main"
+                        class="shadow-md border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="Image" required="" name="image_main">
+                </div>
+            </div>
+            <div>
+                <label for="images" class="block mb-3 text-sm font-medium text-left md:text-center">Gambar lain (tidak
+                    wajib)</label>
+                <div class="grid gap-6 md:grid-cols-3">
+                    <div>
+                        <input type="file" id="images"
+                            class="shadow-md border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Images" required="" name="images[]">
+                    </div>
+                    <div>
+                        <input type="file" id="images"
+                            class="shadow-md border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Images" required="" name="images[]">
+                    </div>
+                    <div>
+                        <input type="file" id="images"
+                            class="shadow-md border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Images" required="" name="images[]">
+                    </div>
+                </div>
+
+            </div>
+            <div class="mb-6">
+                <button type="submit"
+                    class="mt-3 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Simpan</button>
+                <a href="/dashboard/products" type="button"
+                    class="mt-3 text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">Batal</a>
+            </div>
     </form>
 @endsection
