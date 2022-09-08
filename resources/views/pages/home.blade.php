@@ -21,7 +21,7 @@
             <div
                 class="relative p-3 col-start-1 row-start-1 flex flex-col-reverse rounded-lg bg-gradient-to-t from-black/75 via-black/0 sm:bg-none sm:row-start-2 sm:p-0 lg:row-start-1">
                 <h1 class="mt-1 text-lg font-semibold text-white sm:text-slate-900 md:text-2xl dark:sm:text-white">Smega Mart
-                    <span class="md:hiddentext-black">- Belanja di toko</span>
+                    <span class="md:hidden text-black">- Belanja di toko</span>
                 </h1>
             </div>
             <div
@@ -336,7 +336,7 @@
                         </div>
                         <div class="w-full">
                             <h4 class="font-bold text-dark text-xl mb-1">Telepon</h4>
-                            <p class="text-base text-body-color">089688689872</p>
+                            <a href="tel:+6281312008910" class="text-base text-body-color">+62 813-1200-8910</a>
                         </div>
                     </div>
                     <div class="flex mt-8 max-w-[370px] w-full">

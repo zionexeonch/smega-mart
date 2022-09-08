@@ -28,7 +28,7 @@
                         </div>
                         <div class="w-full">
                             <h4 class="font-bold text-dark text-xl mb-1">Telepon</h4>
-                            <p class="text-base text-body-color">089688689872</p>
+                            <a href="tel:+6281312008910" class="text-base text-body-color">+62 813-1200-8910</a>
                         </div>
                     </div>
                     <div class="flex mt-8 max-w-[370px] w-full">
