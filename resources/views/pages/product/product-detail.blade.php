@@ -40,7 +40,10 @@
                 </div>
             </div>
             <div class="lg:col-span-4">
-
+                <h1 class="text-2xl text-center">Bahan pembuat</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure, quibusdam qui porro iste maxime corporis
+                    nesciunt minus dolores voluptates itaque mollitia non assumenda aperiam odio architecto excepturi
+                    incidunt aspernatur temporibus!</p>
             </div>
         </div>
         <div class="grid grid-cols-1 mt-7 bg-white border rounded-lg p-4 lg:p-8">
