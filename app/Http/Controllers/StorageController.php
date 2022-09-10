@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Storage;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class StorageController extends Controller
@@ -16,6 +16,7 @@ class StorageController extends Controller
   {
     return view('admin.pages.storage.index', [
       'title' => 'Gudang',
+      'products' => Product::all(),
     ]);
   }
 
@@ -24,9 +25,8 @@ class StorageController extends Controller
    *
    * @return \Illuminate\Http\Response
    */
-  public function create()
+  public function create($id)
   {
-    //
   }
 
   /**
@@ -43,44 +43,69 @@ class StorageController extends Controller
   /**
    * Display the specified resource.
    *
-   * @param  \App\Models\Storage  $storage
+   * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function show(Storage $storage)
+  public function show($id)
   {
-    //
+    // update stok toko
+
+    $product = Product::findOrFail($id);
+    return view('admin.pages.storage.stock_toko', [
+      'title' => 'Tambah stok ke toko',
+      'product' => $product,
+    ]);
   }
 
   /**
    * Show the form for editing the specified resource.
    *
-   * @param  \App\Models\Storage  $storage
+   * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function edit(Storage $storage)
+  public function edit($id)
   {
-    //
+    //update stok Gudang
+
+    return view('admin.pages.storage.stock_gudang', [
+      'title' => 'Tambah stok ke gudang',
+      'product' => Product::findOrFail($id),
+    ]);
   }
 
   /**
    * Update the specified resource in storage.
    *
    * @param  \Illuminate\Http\Request  $request
-   * @param  \App\Models\Storage  $storage
+   * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, Storage $storage)
+  public function update(Request $request, $id)
   {
-    //
+    $product = Product::findOrFail($id);
+    if ($request->stock_toko) {
+      $product->update([
+        'store_stock' => $product->store_stock + $request->stock_toko,
+      ]);
+    }
+
+    $product = Product::findOrFail($id);
+    if ($request->stock_gudang) {
+      $product->update([
+        'storage_stock' => $product->storage_stock + $request->stock_gudang,
+      ]);
+    }
+
+    return redirect()->to('storage')->with('success', 'Stok berhasil diupdate');
   }
 
   /**
    * Remove the specified resource from storage.
    *
-   * @param  \App\Models\Storage  $storage
+   * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function destroy(Storage $storage)
+  public function destroy($id)
   {
     //
   }

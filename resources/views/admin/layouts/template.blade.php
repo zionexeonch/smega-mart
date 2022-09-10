@@ -59,9 +59,33 @@
                             aria-current="page">Produk</a>
                     </li>
                     <li>
-                        <a href="{{ route('storage.index') }}"
+                        <a href="/storage"
                             class="block py-2 pr-4 pl-3 text-black rounded hover:text-black md:hover:bg-transparent md:hover:text-white md:hover:bg-blue-800 md:p-2 {{ request()->is('admin-storage') ? 'text-black bg-white md:bg-white md:text-black p-3' : 'md:text-white' }}"
                             aria-current="page">Gudang</a>
+                    </li>
+                    <li>
+                        <button id="dropdownDefault" data-dropdown-toggle="dropdown"
+                            class="block py-2 pr-4 pl-3 text-black rounded hover:text-black md:hover:bg-transparent md:hover:text-white md:hover:bg-blue-800 md:p-2 {{ request()->is('admin-storage') ? 'text-black bg-white md:bg-white md:text-black p-3' : 'md:text-white' }}"
+                            type="button">Lainnya<svg class="ml-2 w-4 h-4 inline" aria-hidden="true" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg></button>
+
+                        <!-- Dropdown menu -->
+                        <div id="dropdown"
+                            class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700">
+                            <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
+                                <li>
+                                    <a href="#"
+                                        class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Suplier</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Satuan</a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -129,8 +153,9 @@
                                             placeholder="Cari produk...">
                                         <button type="submit"
                                             class="absolute top-0 right-0 p-2.5 text-sm font-medium text-white bg-[#bb1724] rounded-r-lg border border-[#bb1724] hover:bg-[#ac1521] focus:ring-4 focus:outline-none focus:ring-red-300">
-                                            <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor"
-                                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <svg aria-hidden="true" class="w-5 h-5" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24"
+                                                xmlns="http://www.w3.org/2000/svg">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                     d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                                             </svg>
@@ -151,6 +176,93 @@
                 class="container flex flex-wrap justify-between items-center max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                 <h1 class="flex text-3xl tracking-tight font-bold text-gray-900">{{ $title }}</h1>
                 <a href="/dashboard/products" class="bg-gray-500 text-white hover:bg-gray-600 p-3 rounded-lg"><i
+                        class="fa fa-circle-left"></i> Batal</a>
+            </div>
+        @elseif ($title == 'Detail')
+            <div
+                class="container flex flex-wrap justify-between items-center max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <h1 class="flex text-3xl tracking-tight font-bold text-gray-900">{{ $title }}</h1>
+                <a href="/dashboard/products" class="bg-gray-500 text-white hover:bg-gray-600 p-3 rounded-lg"><i
+                        class="fa fa-circle-left"></i> Batal</a>
+            </div>
+        @elseif ($title == 'Gudang')
+            <div
+                class="container flex flex-wrap justify-between items-center max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <h1 class="flex text-3xl tracking-tight font-bold text-gray-900">{{ $title }}</h1>
+                {{-- search --}}
+                <div class="md:basis-3/5 px-2">
+                    <button type="button"
+                        class="md:hidden tex-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 rounded-lg text-sm p-2.5 mr-1"
+                        data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false">
+                        <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="sr-only">Cari</span>
+                    </button>
+                    <div class="hidden relative md:block">
+                        <div class="relative mt-3 md:mt-0">
+                            <form>
+                                <div class="flex">
+                                    <div class="relative w-full">
+                                        <input type="search" id="search-dropdown"
+                                            class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-lg sm:rounded-l-none border border-gray-300 focus:ring-[#c51826] focus:border-[#c51826]"
+                                            placeholder="Cari produk...">
+                                        <button type="submit"
+                                            class="absolute top-0 right-0 p-2.5 text-sm font-medium text-white bg-[#bb1724] rounded-r-lg border border-[#bb1724] hover:bg-[#ac1521] focus:ring-4 focus:outline-none focus:ring-red-300">
+                                            <svg aria-hidden="true" class="w-5 h-5" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                            </svg>
+                                            <span class="sr-only">Cari</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div id="navbar-search"
+                        class="absolute z-10 top-9 left-0 hidden justify-between items-center w-full md:hidden">
+                        <div class="relative mt-24">
+                            <form>
+                                <div class="flex">
+                                    <div class="relative w-full">
+                                        <input type="search" id="search-dropdown"
+                                            class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-lg sm:rounded-l-none border border-gray-300 focus:ring-[#c51826] focus:border-[#c51826] shadow-lg"
+                                            placeholder="Cari produk...">
+                                        <button type="submit"
+                                            class="absolute top-0 right-0 p-2.5 text-sm font-medium text-white bg-[#bb1724] rounded-r-lg border border-[#bb1724] hover:bg-[#ac1521] focus:ring-4 focus:outline-none focus:ring-red-300">
+                                            <svg aria-hidden="true" class="w-5 h-5" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                            </svg>
+                                            <span class="sr-only">Cari</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @elseif ($title == 'Tambah stok ke toko')
+            <div
+                class="container flex flex-wrap justify-between items-center max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <h1 class="flex text-2xl md:text-3xl tracking-tight font-bold text-gray-900">{{ $title }}</h1>
+                <a href="/storage" class="bg-gray-500 text-white hover:bg-gray-600 p-3 rounded-lg"><i
+                        class="fa fa-circle-left"></i> Batal</a>
+            </div>
+        @elseif ($title == 'Tambah stok ke gudang')
+            <div
+                class="container flex flex-wrap justify-between items-center max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <h1 class="flex text-2xl md:text-3xl tracking-tight font-bold text-gray-900">{{ $title }}</h1>
+                <a href="/storage" class="bg-gray-500 text-white hover:bg-gray-600 p-3 rounded-lg"><i
                         class="fa fa-circle-left"></i> Batal</a>
             </div>
         @else

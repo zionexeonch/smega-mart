@@ -17,6 +17,7 @@ class ProductController extends Controller
   {
     return view('admin.pages.product.index', [
       'title' => 'Produk',
+      'products' => Product::all(),
     ]);
   }
 
@@ -51,8 +52,10 @@ class ProductController extends Controller
    */
   public function show(Product $product)
   {
+    $product = Product::find($product->id);
     return view('admin.pages.product.detail', [
-      'title' => 'Detail',
+      'title' => "Detail",
+      'product' => $product,
     ]);
   }
 
@@ -62,10 +65,12 @@ class ProductController extends Controller
    * @param  \App\Models\Product  $product
    * @return \Illuminate\Http\Response
    */
-  public function edit(Product $product, $id)
+  public function edit(Product $product)
   {
+    $product = Product::find($product->id);
     return view('admin.pages.product.edit', [
       'title' => 'Edit Produk',
+      'product' => $product,
     ]);
   }
 

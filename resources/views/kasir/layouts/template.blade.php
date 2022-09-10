@@ -49,7 +49,7 @@
                 <ul
                     class="flex flex-col p-4 mt-4 bg-white text-black rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-[#bb1724]">
                     <li>
-                        <a href="#"
+                        <a href="{{ route('kasir.index') }}"
                             class="block py-2 pr-4 pl-3 text-black rounded hover:text-black md:hover:bg-transparent md:hover:text-white md:hover:bg-blue-800 md:p-2 {{ request()->is('/dashboard') ? 'text-black bg-white md:bg-white md:text-black p-3' : 'md:text-white' }}"
                             aria-current="page">Kasir</a>
                     </li>
@@ -64,7 +64,7 @@
                             aria-current="page">Laporan</a>
                     </li>
                     <li>
-                        <a href="#"
+                        <a href="/orders"
                             class="block py-2 pr-4 pl-3 text-black rounded hover:text-black md:hover:bg-transparent md:hover:text-white md:hover:bg-blue-800 md:p-2 {{ request()->is('admin-storage') ? 'text-black bg-white md:bg-white md:text-black p-3' : 'md:text-white' }}"
                             aria-current="page">Pesanan</a>
                     </li>

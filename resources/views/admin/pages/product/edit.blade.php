@@ -12,7 +12,7 @@
                 <label for="name" class="block mb-2 text-sm font-medium">Nama Produk</label>
                 <input type="text" id="name"
                     class="shadow-md border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Nama Produk" required="" name="name">
+                    placeholder="Nama Produk" required="" name="name" value="{{ $product->name }}">
             </div>
             <div>
                 <label for="purchase_price" class="block mb-2 text-sm font-medium">Harga Beli</label>

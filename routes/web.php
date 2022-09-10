@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StorageController;
 use App\Http\Controllers\KasirController;
 use App\Http\Controllers\LaporanController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 
 // Routing
@@ -28,9 +29,17 @@ Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth');
 Route::middleware(['auth'])->group(function () {
   Route::get('/dashboard', [AdminController::class, 'index']);
   Route::resource('/dashboard/products', ProductController::class);
-  Route::resource('/storage', StorageController::class);
+  Route::resource('storage', StorageController::class);
+
+  // //Route Gudang
+  // Route::get('/stock-store/{id}', [StorageController::class, 'store']);
+  // Route::post('stock-store/{id}', [StorageController::class, 'updateStore']);
+  // Route::get('/stock-storage/{id}', [StorageController::class, 'storage']);
+
+  //Route Order
+  Route::get('/orders', [OrderController::class, 'index']);
 
   //Route kasir
-  Route::resource('/kasir', KasirController::class);
-  Route::resource('/laporan', LaporanController::class);
+  Route::resource('kasir', KasirController::class);
+  Route::resource('laporan', LaporanController::class);
 });
