@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Suplier;
 use Facade\FlareClient\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class SuplierController extends Controller
 {
@@ -42,6 +43,7 @@ class SuplierController extends Controller
   {
     Suplier::create([
       'name' => $request->name,
+      'slug' => Str::slug($request->name),
     ]);
   }
 
