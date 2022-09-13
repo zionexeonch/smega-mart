@@ -42,7 +42,7 @@ class SuplierController extends Controller
   {
     Suplier::create([
       'name' => $request->name,
-    ])
+    ]);
   }
 
   /**
