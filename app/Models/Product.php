@@ -8,12 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
   use HasFactory;
-  protected $guarded = ['id'];
-  protected $with = ['unit', 'suplier'];
 
-  public function suplier()
+  protected $guarded = ['id'];
+  protected $with = ['category', 'unit'];
+
+  public function category()
   {
-    return $this->belongsTo(Suplier::class);
+    return $this->belongsTo(Category::class);
   }
 
   public function unit()

@@ -8,11 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Unit extends Model
 {
   use HasFactory;
+
   protected $guarded = ['id'];
   protected $with = ['product'];
 
   public function product()
   {
-    return $this->hasOne(Product::class);
+    return $this->hasMany(Product::class);
   }
 }

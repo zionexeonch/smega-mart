@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
 use Illuminate\Database\Seeder;
 use App\Models\Product;
-use App\Models\Suplier;
 use App\Models\Unit;
 
 class ProductSeeder extends Seeder
@@ -16,31 +16,44 @@ class ProductSeeder extends Seeder
    */
   public function run()
   {
-    Product::create([
-      'category_id' => 1,
-      'unit_id' => 1,
-      'suplier_id' => 1,
-      'name' => 'WAFELO',
-      'slug' => 'wafelo',
-      'purchase_price' => 1000,
-      'price' => 2000,
-      'varian' => 'coklat',
-      'store_stock' => 10,
-      'storage_stock' => 20,
-      'description' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem autem hic aspernatur sunt nulla delectus et quaerat magnam, ducimus iusto.',
-      'weight' => 1000,
-      'image_main' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum, reiciendis?',
-      'image_url' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum, reiciendis?',
+
+    Category::create([
+      'name' => 'Snack',
+      'slug' => 'snack'
     ]);
 
-    Suplier::create([
-      'name' => 'PT Mayora Indah TBK',
-      'slug' => 'pt-mayora-indah-tbk',
+    Category::create([
+      'name' => 'Minuman',
+      'slug' => 'minuman'
     ]);
 
     Unit::create([
-      'name' => 'pcs',
+      'name' => 'PCS',
       'slug' => 'pcs',
     ]);
+
+    Unit::create([
+      'name' => 'BKS',
+      'slug' => 'bks',
+    ]);
+
+    // Product::create([
+    //   'category_id' => 1,
+    //   'barcode' => time(),
+    //   'name' => 'Wafello Choco Blast',
+    //   'slug' => 'wafelo-choco-blast',
+    //   'unit_id' => 1,
+    //   'buy_price' => 5500,
+    //   'sold_price' => 6000,
+    //   'variant' => 'coklat',
+    //   'store_stock' => 10,
+    //   'storage_stock' => 20,
+    //   'description' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem autem hic aspernatur sunt nulla delectus et quaerat magnam, ducimus iusto.',
+    //   'weight' => 1000,
+    //   'image_urls' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum, reiciendis?',
+    // ]);
+
+    Product::factory()->count(10)->create();
+
   }
 }

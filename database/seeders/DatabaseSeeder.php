@@ -21,5 +21,9 @@ class DatabaseSeeder extends Seeder
           "password" => Hash::make("SMart@2022"),
           "level" => 2,
         ]);
+
+        $this->call([
+          ProductSeeder::class
+        ]);
     }
 }

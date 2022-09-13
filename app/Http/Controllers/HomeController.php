@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -19,7 +20,8 @@ class HomeController extends Controller
       $title = "Produk";
 
       return view('pages.product.products', [
-        "title" => $title
+        "title" => $title,
+        "products" => Product::latest()->paginate(9)->withQueryString(),
       ]);
     }
 
