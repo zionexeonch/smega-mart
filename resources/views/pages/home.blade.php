@@ -370,9 +370,4 @@
             </div>
         </div>
     </div>
-
-    <script>
-        // starts or resumes the carousel cycling (automated sliding)
-        carousel.cycle(100)
-    </script>
 @endsection

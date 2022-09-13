@@ -21,16 +21,16 @@ class HomeController extends Controller
 
       return view('pages.product.products', [
         "title" => $title,
-        "products" => Product::latest()->paginate(9)->withQueryString(),
+        "products" => Product::latest()->paginate(8)->withQueryString(),
       ]);
     }
 
-    public function productDetail()
+    public function productDetail(Product $product)
     {
-      $title = "Produk";
 
       return view('pages.product.product-detail', [
-        "title" => $title
+        "title" => $product->name,
+        "product" => $product,
       ]);
     }
 
