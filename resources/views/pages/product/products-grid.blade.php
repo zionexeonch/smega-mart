@@ -18,6 +18,6 @@
   </div>
   @endforeach
 </div>
-<div class="mt-4">
-  {{ $products->onEachSide(3)->links() }}
+<div class="mt-4 mx-10 sm:mx-7">
+  {!! $products->onEachSide(1)->links() !!}
 </div>

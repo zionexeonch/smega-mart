@@ -26,7 +26,7 @@
           </select>
           <div class="mt-3 sm:mt-0 inline-block">
             <div class="text-sm font-light">
-              Menampilkan 1 - 10 produk dari total 999
+              Menampilkan {{ $products->firstItem() }} - {{ $products->lastItem() }} produk dari total {{ $products->total() }}
             </div>
           </div>
       </div>

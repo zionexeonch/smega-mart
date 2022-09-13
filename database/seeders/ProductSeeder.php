@@ -53,7 +53,7 @@ class ProductSeeder extends Seeder
     //   'image_urls' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum, reiciendis?',
     // ]);
 
-    Product::factory()->count(10)->create();
+    Product::factory()->count(129)->create();
 
   }
 }
