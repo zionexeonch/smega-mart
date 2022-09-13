@@ -38,7 +38,7 @@ Route::middleware(['auth'])->group(function () {
   // Route::post('stock-store/{id}', [StorageController::class, 'updateStore']);
   // Route::get('/stock-storage/{id}', [StorageController::class, 'storage']);
 
-  //Route supier
+  //Route suplier
   Route::resource('suplier', SuplierController::class);
   Route::resource('unit', UnitController::class);
 
