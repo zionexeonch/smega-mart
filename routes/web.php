@@ -11,6 +11,8 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\SuplierController;
 use App\Http\Controllers\UnitController;
 use Illuminate\Support\Facades\Route;
+use Cviebrock\EloquentSluggable\Services\SlugService;
+use App\Models\Suplier;
 
 // Routing
 
@@ -48,4 +50,11 @@ Route::middleware(['auth'])->group(function () {
   //Route kasir
   Route::resource('kasir', KasirController::class);
   Route::resource('laporan', LaporanController::class);
+
+
+  //slug
+  Route::get('check_slug', function () {
+    $slug = SlugService::createSlug(Suplier::class, 'slug', request('name'));
+    return response()->json(['slug' => $slug]);
+  });
 });

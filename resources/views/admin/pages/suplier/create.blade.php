@@ -7,6 +7,9 @@
                 <input type="text" id="name"
                     class="shadow-md border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="Nama Suplier" required="" name="name">
+                <input type="hidden" id="slug"
+                    class="shadow-md border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Slug Suplier" required="" name="slug">
             </div>
             <div class="mt-4">
                 <button type="submit"
@@ -16,4 +19,20 @@
             </div>
         </div>
     </form>
+    {{-- jQuery Script --}}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    {{-- Check Slug --}}
+    <script>
+        $('#name').change(function(e) {
+            $.get('{{ url('check_slug') }}', {
+                    'name': $(this).val()
+                },
+                function(data) {
+                    $('#slug').val(data.slug);
+                    console.log(data.slug);
+                }
+            );
+        });
+    </script>
 @endsection

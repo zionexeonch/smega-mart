@@ -26,7 +26,7 @@ class CreateProductsTable extends Migration
       $table->integer('store_stock')->unsigned()->default(0);
       $table->integer('storage_stock')->unsigned()->default(0);
       $table->integer('weight')->unsigned()->default(0);
-      $table->string('description')->default('-');
+      $table->text('description');
       $table->string('image_urls')->default('-');
       $table->timestamps();
     });
