@@ -47,30 +47,30 @@
                             <td scope="row"
                                 class="flex items-center py-2 px-6 text-gray-900 whitespace-nowrap dark:text-white max-w-sm">
                                 <div class="pl-3">
-                                    <div class="text-base text-black font-semibold">{{ $product->name }}</div>
-                                    <div class="block font-normal text-black">05958384859593</div>
+                                    <div class="text-base text-black font-semibold">{{ $product->namaBarang }}</div>
+                                    <div class="block font-normal text-black">{{ $product->barcode }}</div>
                                 </div>
                             </td>
                             <td class="py-2 px-6 text-center">
-                                Rp. 200.000
+                                {{ $product->hrgBeli }}
                             </td>
                             <td class="py-2 px-6 text-center">
-                                Rp. 200.000
+                                {{ $product->hrgJual }}
                             </td>
                             <td class="py-2 px-6 text-center">
-                                10
+                                {{ $product->stok }}
                             </td>
                             <td class="py-2 px-6 text-center">
-                                20
+                                {{ $product->stok_gudang }}
                             </td>
                             <td class="py-2 px-6 text-center">
-                                {{ $product->category_id }}
+                                {{ $product->kategori->namaKategori }}
                             </td>
                             <td class="inline-flex text-center">
-                                <a href="{{ route('storage.edit', [$product->id]) }}" type="submit"
+                                <a href="{{ route('storage.edit', [$product->barcode]) }}" type="submit"
                                     class="p-1 mr-1 bg-white text-blue-600 hover:bg-blue-600 border hover:text-white border-blue-600 text-sm rounded-lg">Tambah
                                     Stok Gudang</a>
-                                <a href="{{ route('storage.show', [$product->id]) }}" type="submit"
+                                <a href="{{ route('storage.show', [$product->barcode]) }}" type="submit"
                                     class="p-1 ml-1 bg-white text-blue-600 hover:bg-blue-600 border hover:text-white border-blue-600 text-sm rounded-lg">Tambah
                                     Stok Toko</a>
                             </td>

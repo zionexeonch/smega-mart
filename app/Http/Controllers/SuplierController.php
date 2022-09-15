@@ -6,6 +6,7 @@ use App\Models\Suplier;
 use Facade\FlareClient\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Validator;
 
 class SuplierController extends Controller
 {
@@ -42,11 +43,16 @@ class SuplierController extends Controller
    */
   public function store(Request $request)
   {
+    Validator::make($request->all(), [
+      'kdSupplier' => 'required|unique:datasupplier|max:255',
+    ])->validate();
+
     Suplier::create([
-      'name' => $request->name,
-      'slug' => Str::slug($request->name),
+      'kdSupplier' => $request->kdSupplier,
+      'namaSupplier' => $request->namaSupplier,
+      'slug' => Str::slug($request->namaSupplier),
     ]);
-    return back();
+    return back()->with('success', 'Suplier berhasil ditambah!!');
   }
 
   /**
@@ -88,13 +94,15 @@ class SuplierController extends Controller
    */
   public function update(Request $request, Suplier $suplier)
   {
-    $suplier = Suplier::findOrFail($suplier->id);
-    if ($request->slug != $suplier->slug) {
-      $rules['slug'] = 'required|supliers:unique';
+    $suplier = Suplier::findOrFail($suplier->kdSupplier);
+    if ($request->kdSupplier = $suplier->kdSupplier) {
+      $rules['kdSupplier'] = 'required|datasupplier:unique';
+      return back()->with('error', 'Kode Suplier sudah digunakan, buat kode lain');
     }
 
     $suplier->update([
-      'name' => $request->name,
+      'kdSupplier' => $request->kdSupplier,
+      'namaSupplier' => $request->namaSupplier,
       'slug' => $request->slug,
     ]);
     return redirect()->to('suplier')->with('success', 'Suplier berhasil di edit!!');
@@ -108,8 +116,8 @@ class SuplierController extends Controller
    */
   public function destroy(Suplier $suplier)
   {
-    $suplier = Suplier::findOrFail($suplier->id);
-    $suplier->delete($suplier->id);
+    $suplier = Suplier::findOrFail($suplier->kdSupplier);
+    $suplier->delete($suplier->kdSupplier);
     return back()->with('success', 'Suplier berhasil dihapus!!');
   }
 }

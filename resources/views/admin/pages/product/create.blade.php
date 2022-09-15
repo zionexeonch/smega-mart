@@ -12,23 +12,23 @@
                 <label for="name" class="block mb-2 text-sm font-medium">Nama Produk</label>
                 <input type="text" id="name"
                     class="shadow-md border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Nama Produk" required="" name="name">
+                    placeholder="Nama Produk" required="" name="namaProduk">
             </div>
             <div>
                 <label for="purchase_price" class="block mb-2 text-sm font-medium">Harga Beli</label>
                 <input type="number" id="purchase_price"
                     class="shadow-md border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Harga Beli" required="" name="purchase_price">
+                    placeholder="Harga Beli" required="" name="hrgBeli">
             </div>
             <div>
                 <label for="price" class="block mb-2 text-sm font-medium">Harga Jual</label>
                 <input type="number" id="price"
                     class="shadow-md border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Harga Jual" required="" name="price">
+                    placeholder="Harga Jual" required="" name="hrgJual">
             </div>
             <div>
                 <label for="stock_store" class="block mb-2 text-sm font-medium">Satuan</label>
-                <select name="" id=""
+                <select name="kdSatuan" id=""
                     class="shadow-md border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     <option value="" class="hover:bg-blue-600 hover:text-white">Pilih Satuan</option>
                     <option value="">PCS</option>
@@ -36,7 +36,7 @@
             </div>
             <div>
                 <label for="stock_store" class="block mb-2 text-sm font-medium">Kategori</label>
-                <select name="" id=""
+                <select name="kdKategori" id=""
                     class="shadow-md border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     <option value="">Pilih Kategori</option>
                     <option value="">Sepatu</option>
@@ -46,13 +46,19 @@
                 <label for="stock_storage" class="block mb-2 text-sm font-medium">Stok Gudang</label>
                 <input type="number" id="stock_storage"
                     class="shadow-md border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Stok Gudang" required="" name="stock_storage">
+                    placeholder="Stok Gudang" required="" name="stok_gudang">
             </div>
             <div>
                 <label for="stock_store" class="block mb-2 text-sm font-medium">Stok Toko</label>
                 <input type="number" id="stock_store"
                     class="shadow-md border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Stok Toko" required="" name="stock_store">
+                    placeholder="Stok Toko" required="" name="stok">
+            </div>
+            <div>
+                <label for="weight" class="block mb-2 text-sm font-medium">Berat (gram)</label>
+                <input type="number" id="weight"
+                    class="shadow-md border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="1 KG = 100 gram" required="" name="berat">
             </div>
             <div>
                 <label for="stock_store" class="block mb-2 text-sm font-medium">Suplier</label>
@@ -62,33 +68,21 @@
                     <option value="">PT Mayora Indah TBK</option>
                 </select>
             </div>
-            <div>
-                <label for="varian" class="block mb-2 text-sm font-medium">Varian</label>
-                <input type="text" id="varian"
-                    class="shadow-md border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Varian" required="" name="varian">
-            </div>
         </div>
 
         <div>
             <label for="image_main" class="block mb-2 text-sm font-medium">Deskripsi</label>
-            <textarea name="description" id=""
+            <textarea name="deskripsi" id=""
                 class="w-full h-28 shadow-md border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Deskripsi Produk"></textarea>
         </div>
 
         <div class="grid gap-6 md:grid-cols-2 mt-2">
             <div>
-                <label for="weight" class="block mb-2 text-sm font-medium">Berat (gram)</label>
-                <input type="number" id="weight"
-                    class="shadow-md border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="1 KG = 100 gram" required="" name="weight">
-            </div>
-            <div>
                 <label for="image_main" class="block mb-3 text-sm font-medium">Gambar utama</label>
                 <input type="file" id="image_main"
                     class="shadow-md border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Image" required="" name="image_main">
+                    placeholder="Image" required="" name="cloud_img">
             </div>
         </div>
 

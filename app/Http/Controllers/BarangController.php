@@ -21,6 +21,11 @@ class BarangController extends Controller
     ]);
   }
 
+  public function list()
+  {
+    return Barang::all();
+  }
+
   /**
    * Show the form for creating a new resource.
    *

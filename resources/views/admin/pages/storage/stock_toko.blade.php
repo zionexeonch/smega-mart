@@ -28,23 +28,17 @@
             <div class="lg:col-span-4">
                 <div class="mt-7 lg:mt-0 p-1 lg:p-0 lg:pl-5">
                     <h2 class="mb-3 text-xl text-gray-600 font-semibold uppercase tracking-wide">
-                        {{ $product->name }}
+                        {{ $product->namaBarang }}
                     </h2>
                     <p class="mb-2 text-sm text-slate-600">
-                        Makanan Kecil
+                        {{ $product->kategori->namaKategori }}
                     </p>
                     <h3 class="mb-2 text-xl font-semibold text-red-800">Rp.{{ number_format(600000, 0, ',', '.') }}</h3>
                     <p class="text-sm font-bold text-slate-600">
-                        Stok Gudang: <span>8</span>
+                        Stok Gudang: <span>{{ $product->stok_gudang }}</span>
                     </p>
                     <p class="text-sm font-bold text-slate-600">
-                        Stok Toko: <span>8</span>
-                    </p>
-                    <p class="text-sm text-slate-600">
-                        Merk: <span>Roma</span>
-                    </p>
-                    <p class="text-sm text-slate-600">
-                        Varian: <span>Coklat</span>
+                        Stok Toko: <span>{{ $product->stok }}</span>
                     </p>
                     <p class="text-sm text-slate-600">
                         Berat: <span>1000 gram</span>
@@ -57,7 +51,7 @@
             <div class="lg:col-span-4">
                 <div class="mt-7 lg:mt-0 p-1 lg:p-0 lg:pl-5">
                     <h1 class="text-2xl">Tambah stok ke Toko:</h1>
-                    <form action="{{ route('storage.update', [$product->id]) }}" method="post">
+                    <form action="{{ route('storage.update', [$product->barcode]) }}" method="post">
                         @csrf
                         @method('put')
                         <input type="number" min="1" name="stock_toko" placeholder="Jumlah ?"

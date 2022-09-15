@@ -13,18 +13,19 @@ class Suplier extends Model
 
   protected $table = 'datasupplier';
   protected $primaryKey = 'kdSupplier';
-  protected $guarded = ['kdSupplier'];
+  protected $guarded = [];
+  public $timestamps = false;
 
   public function product()
   {
-    return $this->hasOne(Product::class);
+    return $this->hasMany(Barang::class);
   }
 
   public function sluggable(): array
   {
     return [
       'slug' => [
-        'source' => 'name'
+        'source' => 'namaSupplier'
       ]
     ];
   }

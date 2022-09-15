@@ -3,7 +3,6 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StorageController;
 use App\Http\Controllers\KasirController;
 use App\Http\Controllers\LaporanController;
@@ -11,6 +10,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\SuplierController;
 use App\Http\Controllers\UnitController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\BarangController;
 use Illuminate\Support\Facades\Route;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 
@@ -32,7 +32,12 @@ Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth');
 // Routing Admin
 // Route::middleware(['auth'])->group(function () {
 Route::get('/dashboard', [AdminController::class, 'index']);
-Route::resource('/dashboard/products', ProductController::class);
+
+//Route product
+Route::resource('/dashboard/products', BarangController::class);
+Route::get('/dashboard/products/list', [BarangController::class, 'list']);
+
+
 Route::resource('storage', StorageController::class);
 
 // //Route Gudang
@@ -57,7 +62,7 @@ Route::resource('laporan', LaporanController::class);
 
 //slug
 Route::get('check_slug', function () {
-  $slug = SlugService::createSlug(App\Models\Suplier::class, 'slug', request('name'));
+  $slug = SlugService::createSlug(App\Models\Suplier::class, 'slug', request('namaSupplier'));
   return response()->json(['slug' => $slug]);
 });
 

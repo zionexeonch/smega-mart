@@ -12,6 +12,9 @@
                             Username
                         </th>
                         <th scope="col" class="py-2 px-6">
+                            Email
+                        </th>
+                        <th scope="col" class="py-2 px-6">
                             Level
                         </th>
                         <th scope="col" class="py-2 px-6 text-center">
@@ -29,10 +32,15 @@
                                 {{ $user->namaUser }}
                             </td>
                             <td>
+                                {{ $user->email }}
+                            </td>
+                            <td>
                                 @if ($user->level == 'admin')
                                     <span class="bg-blue-600 text-white p-1 rounded-lg">{{ $user->level }}</span>
                                 @elseif ($user->level == 'kasir')
                                     <span class="bg-yellow-400 text-black p-1 rounded-lg">{{ $user->level }}</span>
+                                @else
+                                    <span class="bg-green-500 text-white p-1 rounded-lg">{{ $user->level }}</span>
                                 @endif
                             </td>
                             <td class="flex py-2 px-1 items-center md:px-auto text-center">
@@ -88,14 +96,13 @@
                     <form action="{{ route('user.store') }}" method="post">
                         @csrf
                         <div>
-                            <label for="name">Nama Suplier</label>
-                            <input type="text" name="name" class="w-full border rounded-lg" id="name"
-                                placeholder="Nama Suplier" required>
-                            <input type="hidden" name="slug" class="w-full border rounded-lg" id="slug" required>
+                            <label for="name">Nama Akun</label>
+                            <input type="text" name="namaUser" class="w-full border rounded-lg" id="namaUser"
+                                placeholder="Nama Akun" required>
                         </div>
                         <div>
                             <label for="leve">Level</label>
-                            <select name="level" id="level">
+                            <select name="level" id="level" class="w-full border rounded-lg">
                                 <option value="">Pilih Level Akun</option>
                                 <option value="admin">Admin</option>
                                 <option value="kasir">Kasir</option>
@@ -167,21 +174,4 @@
             </div>
         </div>
     @endforeach
-
-    {{-- jQuery Script --}}
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    {{-- Check Slug --}}
-    <script>
-        $('#namaUser').change(function(e) {
-            $.get('{{ url('check_slug') }}', {
-                    'namaUser': $(this).val()
-                },
-                function(data) {
-                    $('#slug').val(data.slug);
-                    console.log(data.slug);
-                }
-            );
-        });
-    </script>
 @endsection

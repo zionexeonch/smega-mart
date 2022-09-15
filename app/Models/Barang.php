@@ -23,4 +23,9 @@ class Barang extends Model
   {
     return $this->belongsTo(Satuan::class);
   }
+
+  public function suplier()
+  {
+    return $this->belongsToMany(Suplier::class);
+  }
 }
