@@ -5,7 +5,7 @@
             <div class="lg:col-span-4">
                 <main id="gallery">
                     <div id="main-image">
-                        <img src="/assets/img/roma-wafello-chocoblast-depan.jpg" alt="Image"
+                        <img src="{{ $product->image_urls }}" alt="Image"
                             class="object-contain max-w-full h-[314px] mt-2 p-1 bg-gray-50 border border-gray-300 rounded-md">
                     </div>
                     <div id="images" class="grid grid-cols-4 gap-x-4 mt-3">
