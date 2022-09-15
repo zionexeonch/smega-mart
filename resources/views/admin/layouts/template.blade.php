@@ -86,6 +86,10 @@
                                     <a href="{{ route('unit.index') }}"
                                         class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Satuan</a>
                                 </li>
+                                <li>
+                                    <a href="{{ route('user.index') }}"
+                                        class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Akun</a>
+                                </li>
                             </ul>
                         </div>
                     </li>
@@ -166,6 +170,15 @@
                 </button>
             </div>
         @elseif ($title == 'Satuan')
+            <div
+                class="container flex flex-wrap justify-between items-center max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <h1 class="flex text-3xl tracking-tight font-bold text-gray-900">{{ $title }}</h1>
+                <button class="bg-red-600 text-white hover:bg-red-700 p-3 rounded-lg" type="button"
+                    data-modal-toggle="tambah">
+                    <i class="fa fa-plus"></i> Tambah Satuan
+                </button>
+            </div>
+        @elseif ($title == 'Akun')
             <div
                 class="container flex flex-wrap justify-between items-center max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                 <h1 class="flex text-3xl tracking-tight font-bold text-gray-900">{{ $title }}</h1>
