@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
-use App\Models\Product;
+use App\Models\Barang;
 
 class ProductController extends Controller
 {
@@ -17,7 +17,7 @@ class ProductController extends Controller
   {
     return view('admin.pages.product.index', [
       'title' => 'Produk',
-      'products' => Product::all(),
+      'products' => Barang::all(),
     ]);
   }
 
@@ -50,9 +50,9 @@ class ProductController extends Controller
    * @param  \App\Models\Product  $product
    * @return \Illuminate\Http\Response
    */
-  public function show(Product $product)
+  public function show(Barang $product)
   {
-    $product = Product::find($product->id);
+    $product = Barang::find($product->id);
     return view('admin.pages.product.detail', [
       'title' => "Detail",
       'product' => $product,
@@ -65,9 +65,9 @@ class ProductController extends Controller
    * @param  \App\Models\Product  $product
    * @return \Illuminate\Http\Response
    */
-  public function edit(Product $product)
+  public function edit(Barang $product)
   {
-    $product = Product::find($product->id);
+    $product = Barang::find($product->id);
     return view('admin.pages.product.edit', [
       'title' => 'Edit Produk',
       'product' => $product,
@@ -78,10 +78,10 @@ class ProductController extends Controller
    * Update the specified resource in storage.
    *
    * @param  \App\Http\Requests\UpdateProductRequest  $request
-   * @param  \App\Models\Product  $product
+   * @param  \App\Models\Barang  $product
    * @return \Illuminate\Http\Response
    */
-  public function update(UpdateProductRequest $request, Product $product)
+  public function update(UpdateProductRequest $request, Barang $product)
   {
     //
   }
@@ -92,7 +92,7 @@ class ProductController extends Controller
    * @param  \App\Models\Product  $product
    * @return \Illuminate\Http\Response
    */
-  public function destroy(Product $product)
+  public function destroy(Barang $product)
   {
     //
   }

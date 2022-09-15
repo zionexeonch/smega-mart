@@ -10,7 +10,10 @@ class Suplier extends Model
 {
   use HasFactory;
   use Sluggable;
-  protected $guarded = ['id'];
+
+  protected $table = 'datasupplier';
+  protected $primaryKey = 'kdSupplier';
+  protected $guarded = ['kdSupplier'];
 
   public function product()
   {

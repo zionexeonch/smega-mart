@@ -16,14 +16,13 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         User::create([
-          "name" => "Admin",
-          "email" => "smegamart@smega.sch.id",
+          "namaUser" => "Admin",
           "password" => Hash::make("SMart@2022"),
-          "level" => 2,
+          "level" => "admin",
         ]);
 
         $this->call([
-          ProductSeeder::class
+          BarangSeeder::class
         ]);
     }
 }

@@ -6,11 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 
-class Unit extends Model
+class Satuan extends Model
 {
   use HasFactory;
   use Sluggable;
-  protected $guarded = ['id'];
+
+  protected $table = 'tabelsatuan';
+  protected $primaryKey = 'kdSatuan';
+  protected $guarded = ['kdSatuan'];
 
   public function product()
   {
