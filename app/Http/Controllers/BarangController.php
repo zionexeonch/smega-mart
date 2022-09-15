@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreProductRequest;
-use App\Http\Requests\UpdateProductRequest;
-use App\Models\Product;
+use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use App\Models\Barang;
 
-class ProductController extends Controller
+class BarangController extends Controller
 {
   /**
    * Display a listing of the resource.
@@ -17,7 +17,7 @@ class ProductController extends Controller
   {
     return view('admin.pages.product.index', [
       'title' => 'Produk',
-      'products' => Product::all(),
+      'products' => Barang::all(),
     ]);
   }
 
@@ -36,25 +36,36 @@ class ProductController extends Controller
   /**
    * Store a newly created resource in storage.
    *
-   * @param  \App\Http\Requests\StoreProductRequest  $request
+   * @param  \Illuminate\Http\Request  $request
    * @return \Illuminate\Http\Response
    */
-  public function store(StoreProductRequest $request)
+  public function store(Request $request)
   {
-    //
+    Barang::create([
+      'barcode' => $request->barcode,
+      'namaBarang' => $request->namaBarang,
+      'slug' => $request->slug,
+      'kdKategori' => $request->kdKategori,
+      'hrgBeli' => $request->hrgBeli,
+      'hrgJual' => $request->hrgJual,
+      'stok' => $request->stok,
+      'deskripsi' => $request->deskripsi,
+      'img_urls' => $request->img_urls,
+    ]);
+    return redirect()->to('product')->with('success', 'Produk berhasil ditambah!');
   }
 
   /**
    * Display the specified resource.
    *
-   * @param  \App\Models\Product  $product
+   * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function show(Product $product)
+  public function show($id)
   {
-    $product = Product::find($product->id);
+    $product =  Barang::findOrFail($id);
     return view('admin.pages.product.detail', [
-      'title' => "Detail",
+      'title' => 'Detail',
       'product' => $product,
     ]);
   }
@@ -62,12 +73,12 @@ class ProductController extends Controller
   /**
    * Show the form for editing the specified resource.
    *
-   * @param  \App\Models\Product  $product
+   * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function edit(Product $product)
+  public function edit($id)
   {
-    $product = Product::find($product->id);
+    $product = Barang::findOrFail($id);
     return view('admin.pages.product.edit', [
       'title' => 'Edit Produk',
       'product' => $product,
@@ -77,11 +88,11 @@ class ProductController extends Controller
   /**
    * Update the specified resource in storage.
    *
-   * @param  \App\Http\Requests\UpdateProductRequest  $request
-   * @param  \App\Models\Product  $product
+   * @param  \Illuminate\Http\Request  $request
+   * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function update(UpdateProductRequest $request, Product $product)
+  public function update(Request $request, $id)
   {
     //
   }
@@ -89,10 +100,10 @@ class ProductController extends Controller
   /**
    * Remove the specified resource from storage.
    *
-   * @param  \App\Models\Product  $product
+   * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function destroy(Product $product)
+  public function destroy($id)
   {
     //
   }

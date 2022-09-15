@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
+use App\Models\Barang;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -21,15 +21,15 @@ class HomeController extends Controller
 
       return view('pages.product.products', [
         "title" => $title,
-        "products" => Product::latest()->paginate(8)->withQueryString(),
+        "products" => Barang::latest()->paginate(8)->withQueryString(),
       ]);
     }
 
-    public function productDetail(Product $product)
+    public function productDetail(Barang $product)
     {
 
       return view('pages.product.product-detail', [
-        "title" => $product->name,
+        "title" => $product->namaBarang,
         "product" => $product,
       ]);
     }

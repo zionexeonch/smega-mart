@@ -17,3 +17,21 @@
     user-select: none;
   }
 }
+
+@layer utilities {
+  .btn-detail {
+    --tw-bg-opacity: 1;
+    background-color: rgb(26 86 219 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+    font-weight: 700;
+    border-radius: 0.5rem /* 8px */;
+    font-size: 0.875rem /* 14px */;
+    line-height: 1.25rem /* 20px */;
+    width: 100%;
+  }
+  .hover\:bg-blue-800:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(30 66 159 / var(--tw-bg-opacity));
+  }
+}

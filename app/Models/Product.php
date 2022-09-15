@@ -11,6 +11,7 @@ class Product extends Model
 
   protected $guarded = ['id'];
   protected $with = ['category'];
+  protected $fillable = ['name', 'slug', 'barcode', 'buy_price', 'sold_price', 'variant', 'store_stock', 'weight'];
 
   public function category()
   {

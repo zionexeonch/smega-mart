@@ -121,4 +121,21 @@
                 class="mt-3 text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">Batal</a>
         </div>
     </form>
+    {{-- jQuery Script --}}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    {{-- Check Slug --}}
+    <script>
+        $('#name').change(function(e) {
+            $.get('{{ url('check_slug') }}', {
+                    'name': $(this).val()
+                    console.log(name.value)
+                },
+                function(data) {
+                    $('#slug').val(data.slug);
+                    console.log(data.slug);
+                }
+            );
+        });
+    </script>
 @endsection

@@ -18,6 +18,7 @@ class SuplierController extends Controller
   {
     return View('admin.pages.suplier.index', [
       'title' => 'Suplier',
+      'supliers' => Suplier::all(),
     ]);
   }
 
@@ -45,6 +46,7 @@ class SuplierController extends Controller
       'name' => $request->name,
       'slug' => Str::slug($request->name),
     ]);
+    return back();
   }
 
   /**
@@ -55,8 +57,10 @@ class SuplierController extends Controller
    */
   public function show(Suplier $suplier)
   {
+    $suplier = Suplier::findOrFail($suplier->id);
     return view('admin.pages.suplier.detail', [
       'title' => 'Detail Suplier',
+      'suplier' => $suplier,
     ]);
   }
 
@@ -68,7 +72,11 @@ class SuplierController extends Controller
    */
   public function edit(Suplier $suplier)
   {
-    //
+    $suplier = Suplier::findOrFail($suplier->id);
+    return view('admin.pages.suplier.edit', [
+      'title' => 'Edit',
+      'suplier' => $suplier,
+    ]);
   }
 
   /**
@@ -80,7 +88,16 @@ class SuplierController extends Controller
    */
   public function update(Request $request, Suplier $suplier)
   {
-    //
+    $suplier = Suplier::findOrFail($suplier->id);
+    if ($request->slug != $suplier->slug) {
+      $rules['slug'] = 'required|supliers:unique';
+    }
+
+    $suplier->update([
+      'name' => $request->name,
+      'slug' => $request->slug,
+    ]);
+    return redirect()->to('suplier')->with('success', 'Suplier berhasil di edit!!');
   }
 
   /**
@@ -91,6 +108,8 @@ class SuplierController extends Controller
    */
   public function destroy(Suplier $suplier)
   {
-    //
+    $suplier = Suplier::findOrFail($suplier->id);
+    $suplier->delete($suplier->id);
+    return back()->with('success', 'Suplier berhasil dihapus!!');
   }
 }
