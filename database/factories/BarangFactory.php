@@ -22,7 +22,9 @@ class BarangFactory extends Factory
             'hrgBeli' => $this->faker->randomNumber(5, true),
             'hrgJual' => $this->faker->randomNumber(5, true),
             'stok' => $this->faker->numberBetween(1, 20),
+            'stok_gudang' => $this->faker->numberBetween(1, 20),
             'deskripsi' => $this->faker->paragraph(),
+            'cloud_img' => $this->faker->imageUrl(360, 360, 'product', true, null, false, 'jpeg'),
             'img_urls' => $this->faker->imageUrl(360, 360, 'product', true, null, false, 'jpeg')
         ];
     }
