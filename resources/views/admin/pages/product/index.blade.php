@@ -50,19 +50,19 @@
                                     <div class="block font-normal text-black">{{ $product->barcode }}</div>
                                 </div>
                             </td>
-                            <td>
+                            <td class="text-center">
                                 Rp. {{ number_format($product->hrgBeli, 0, ',', '.') }}
                             </td>
-                            <td>
+                            <td class="text-center">
                                 Rp. {{ number_format($product->hrgJual, 0, ',', '.') }}
                             </td>
-                            <td>
+                            <td class="text-center">
                                 {{ $product->stok }}
                             </td>
-                            <td>
+                            <td class="text-center">
                                 {{ $product->stok_gudang }}
                             </td>
-                            <td>
+                            <td class="text-center">
                                 {{ $product->kategori->namaKategori }}
                             </td>
                             <td class="flex py-2 px-1 items-center md:px-auto text-center">

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\Barang;
+use App\Models\Satuan;
+use App\Models\Kategori;
 
 class BarangController extends Controller
 {
@@ -35,6 +37,8 @@ class BarangController extends Controller
   {
     return view('admin.pages.product.create', [
       'title' => 'Tambah Produk',
+      'satuan' => Satuan::all(),
+      'kategori' => Kategori::all(),
     ]);
   }
 
@@ -49,15 +53,20 @@ class BarangController extends Controller
     Barang::create([
       'barcode' => $request->barcode,
       'namaBarang' => $request->namaBarang,
-      'slug' => $request->slug,
-      'kdKategori' => $request->kdKategori,
+      'slug' => Str::slug($request->namaBarang),
+      'kdKategori' => $request->kdKategori ?? '-',
+      'kdSatuan' => $request->kdSatuan ?? '-',
+      'kdSupplier' => $request->kdSupplier ?? '-',
       'hrgBeli' => $request->hrgBeli,
       'hrgJual' => $request->hrgJual,
       'stok' => $request->stok,
-      'deskripsi' => $request->deskripsi,
-      'img_urls' => $request->img_urls,
+      'stok_gudang' => $request->stok_gudang,
+      'deskripsi' => $request->deskripsi ?? '-',
+      'img_urls' => $request->img_urls ?? '-',
+      'cloud_img' => $request->cloud_img ?? '-',
     ]);
-    return redirect()->to('product')->with('success', 'Produk berhasil ditambah!');
+    // return redirect()->to('/dashboard/products')->with('success', 'Produk berhasil ditambah!');
+    return back()->with('success', 'Produk berhasil ditambah!');
   }
 
   /**

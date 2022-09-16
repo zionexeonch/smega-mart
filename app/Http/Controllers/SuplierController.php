@@ -43,18 +43,18 @@ class SuplierController extends Controller
    */
   public function store(Request $request)
   {
-    Validator::make($request->all(), [
-      'kdSupplier' => 'required|unique:datasupplier|max:255',
-    ])->validate();
-
-    Suplier::create([
-      'kdSupplier' => $request->kdSupplier,
-      'namaSupplier' => $request->namaSupplier,
-      'slug' => Str::slug($request->namaSupplier),
-    ]);
-    return back()->with('success', 'Suplier berhasil ditambah!!');
+    $rules['kdSupplier'] = 'unique:datasupplier';
+    if ($rules['kdSupplier']) {
+      return back();
+    } elseif (!$rules['kdSupplier']) {
+      Suplier::create([
+        'kdSupplier' => $request->kdSupplier,
+        'namaSupplier' => $request->namaSupplier,
+        'slug' => Str::slug($request->namaSupplier),
+      ]);
+      return back()->with('success', 'Suplier berhasil ditambah!!');
+    }
   }
-
   /**
    * Display the specified resource.
    *
