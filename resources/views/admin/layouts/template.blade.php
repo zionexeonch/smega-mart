@@ -184,7 +184,7 @@
                 <h1 class="flex text-3xl tracking-tight font-bold text-gray-900">{{ $title }}</h1>
                 <button class="bg-red-600 text-white hover:bg-red-700 p-3 rounded-lg" type="button"
                     data-modal-toggle="tambah">
-                    <i class="fa fa-plus"></i> Tambah Satuan
+                    <i class="fa fa-plus"></i> Tambah Akun
                 </button>
             </div>
         @else

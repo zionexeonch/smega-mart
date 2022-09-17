@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
+use App\Models\Barang;
 use Illuminate\Http\Request;
 
 class StorageController extends Controller
@@ -16,7 +16,7 @@ class StorageController extends Controller
   {
     return view('admin.pages.storage.index', [
       'title' => 'Gudang',
-      'products' => Product::all(),
+      'products' => Barang::all(),
     ]);
   }
 
@@ -50,7 +50,7 @@ class StorageController extends Controller
   {
     // update stok toko
 
-    $product = Product::findOrFail($id);
+    $product = Barang::findOrFail($id);
     return view('admin.pages.storage.stock_toko', [
       'title' => 'Tambah stok ke toko',
       'product' => $product,
@@ -69,7 +69,7 @@ class StorageController extends Controller
 
     return view('admin.pages.storage.stock_gudang', [
       'title' => 'Tambah stok ke gudang',
-      'product' => Product::findOrFail($id),
+      'product' => Barang::findOrFail($id),
     ]);
   }
 
@@ -82,14 +82,14 @@ class StorageController extends Controller
    */
   public function update(Request $request, $id)
   {
-    $product = Product::findOrFail($id);
+    $product = Barang::findOrFail($id);
     if ($request->stock_toko) {
       $product->update([
         'store_stock' => $product->store_stock + $request->stock_toko,
       ]);
     }
 
-    $product = Product::findOrFail($id);
+    $product = Barang::findOrFail($id);
     if ($request->stock_gudang) {
       $product->update([
         'storage_stock' => $product->storage_stock + $request->stock_gudang,
